@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  /* ระบบนี้ใช้โทนแดงกรั่ง (crimson) สื่อถึงกล่องยาฉุกเฉิน/crash cart — แยกจาก BN41 MED-TRACK
+     (โทนกรมท่า/navy) และ BN41 แจ้งเตือนสต๊อกยา (โทนเขียวอมฟ้า/teal) ให้แยกแท็บได้ชัดเจน */
+  --color-kit-crimson: #9f1239;
+  --color-kit-crimson-dark: #6b0f28;
+  --color-kit-crimson-light: #ffe4e9;
+  --color-kit-ink: #1f2937;
+  --color-kit-muted: #6b7280;
+  --color-kit-bg: #faf8f8;
+  --color-kit-border: #e8e0e1;
+
+  --color-status-good: #15803d;
+  --color-status-good-bg: #dcfce7;
+  --color-status-warning: #b45309;
+  --color-status-warning-bg: #fef3c7;
+  --color-status-serious: #c2410c;
+  --color-status-serious-bg: #ffedd5;
+  --color-status-critical: #b91c1c;
+  --color-status-critical-bg: #fee2e2;
+
+  --font-sans: "Sarabun", "Kanit", system-ui, sans-serif;
+  --font-display: "Kanit", "Sarabun", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: var(--color-kit-bg);
+    color: var(--color-kit-ink);
+  }
+}
