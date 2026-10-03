@@ -1,8 +1,10 @@
 import { useState, type FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 export default function LoginPage() {
   const { signIn } = useAuth();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -14,7 +16,11 @@ export default function LoginPage() {
     setError(null);
     const { error: signInError } = await signIn(email, password);
     setLoading(false);
-    if (signInError) setError("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
+    if (signInError) {
+      setError("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
+      return;
+    }
+    navigate("/", { replace: true });
   }
 
   return (
