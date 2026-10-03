@@ -1,0 +1,2 @@
+[functions.check-kit-expiry]
+verify_jwt = false
